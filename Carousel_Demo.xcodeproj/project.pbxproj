@@ -13,6 +13,7 @@
 		F9F0210A1FA50BE800CCD5D6 /* Carousel_Demo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F9F021081FA50BE700CCD5D6 /* Carousel_Demo.xcdatamodeld */; };
 		F9F0210C1FA50BE800CCD5D6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F9F0210B1FA50BE800CCD5D6 /* Assets.xcassets */; };
 		F9F0210F1FA50BE800CCD5D6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9F0210D1FA50BE800CCD5D6 /* LaunchScreen.storyboard */; };
+		F9F021171FA52B1400CCD5D6 /* Carousel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9F021161FA52B1400CCD5D6 /* Carousel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		F9F0210B1FA50BE800CCD5D6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F9F0210E1FA50BE800CCD5D6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F9F021101FA50BE900CCD5D6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F9F021161FA52B1400CCD5D6 /* Carousel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Carousel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +60,7 @@
 			children = (
 				F9F021011FA50BE600CCD5D6 /* AppDelegate.swift */,
 				F9F021031FA50BE600CCD5D6 /* ViewController.swift */,
+				F9F021161FA52B1400CCD5D6 /* Carousel.swift */,
 				F9F021051FA50BE700CCD5D6 /* Main.storyboard */,
 				F9F0210B1FA50BE800CCD5D6 /* Assets.xcassets */,
 				F9F0210D1FA50BE800CCD5D6 /* LaunchScreen.storyboard */,
@@ -142,6 +145,7 @@
 				F9F0210A1FA50BE800CCD5D6 /* Carousel_Demo.xcdatamodeld in Sources */,
 				F9F021041FA50BE600CCD5D6 /* ViewController.swift in Sources */,
 				F9F021021FA50BE600CCD5D6 /* AppDelegate.swift in Sources */,
+				F9F021171FA52B1400CCD5D6 /* Carousel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

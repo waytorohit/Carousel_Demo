@@ -1,14 +1,19 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1611" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Carousel_Demo" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -16,11 +21,148 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6wx-EM-cZG">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="dWs-AO-CMU">
+                                <rect key="frame" x="0.0" y="118" width="375" height="430"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="20" minimumInteritemSpacing="10" id="S4b-vs-32b">
+                                    <size key="itemSize" width="250" height="380"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="20" minY="0.0" maxX="20" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CarouselCell" id="BBd-FT-wsO" customClass="CarouselCell" customModule="Carousel_Demo" customModuleProvider="target">
+                                        <rect key="frame" x="20" y="25" width="250" height="380"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="250" height="380"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view clipsSubviews="YES" contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="1w8-RS-e7I">
+                                                    <rect key="frame" x="0.0" y="311" width="250" height="69"/>
+                                                    <subviews>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a5s-fd-Zuy">
+                                                            <rect key="frame" x="91" y="6" width="69" height="56"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="69" id="gXy-VN-osv"/>
+                                                                <constraint firstAttribute="height" constant="56" id="ufX-Jd-yXn"/>
+                                                            </constraints>
+                                                            <state key="normal" image="heart"/>
+                                                            <connections>
+                                                                <action selector="didLikeButtonPressedWithCell:" destination="BBd-FT-wsO" eventType="touchUpInside" id="6LT-6c-69v"/>
+                                                            </connections>
+                                                        </button>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstItem="a5s-fd-Zuy" firstAttribute="centerY" secondItem="1w8-RS-e7I" secondAttribute="centerY" id="VA3-Wo-TbZ"/>
+                                                        <constraint firstItem="a5s-fd-Zuy" firstAttribute="centerX" secondItem="1w8-RS-e7I" secondAttribute="centerX" id="tSS-st-nu6"/>
+                                                    </constraints>
+                                                </view>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="City" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pXo-1z-bti">
+                                                    <rect key="frame" x="107" y="68" width="36" height="27"/>
+                                                    <fontDescription key="fontDescription" name="SnellRoundhand-Bold" family="Snell Roundhand" pointSize="21"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Country" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mkN-nP-9ec">
+                                                    <rect key="frame" x="97" y="110" width="56" height="22"/>
+                                                    <fontDescription key="fontDescription" name="SnellRoundhand-Bold" family="Snell Roundhand" pointSize="17"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Days" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d6c-hm-N9K">
+                                                    <rect key="frame" x="104" y="145" width="42" height="23"/>
+                                                    <fontDescription key="fontDescription" name="SnellRoundhand-Bold" family="Snell Roundhand" pointSize="18"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cQg-Dq-tF8">
+                                                    <rect key="frame" x="102" y="177" width="46" height="26"/>
+                                                    <fontDescription key="fontDescription" name="SnellRoundhand-Bold" family="Snell Roundhand" pointSize="20"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Vdt-Xa-lEO">
+                                                    <rect key="frame" x="0.0" y="0.0" width="250" height="311"/>
+                                                </imageView>
+                                            </subviews>
+                                        </view>
+                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstItem="1w8-RS-e7I" firstAttribute="leading" secondItem="BBd-FT-wsO" secondAttribute="leading" id="04d-nE-c5s"/>
+                                            <constraint firstItem="pXo-1z-bti" firstAttribute="centerX" secondItem="Vdt-Xa-lEO" secondAttribute="centerX" id="5EB-AO-Ftb"/>
+                                            <constraint firstItem="1w8-RS-e7I" firstAttribute="top" secondItem="Vdt-Xa-lEO" secondAttribute="bottom" id="6SH-51-s2E"/>
+                                            <constraint firstItem="Vdt-Xa-lEO" firstAttribute="height" secondItem="1w8-RS-e7I" secondAttribute="height" multiplier="4.5" id="B7m-qp-TzE"/>
+                                            <constraint firstAttribute="trailing" secondItem="1w8-RS-e7I" secondAttribute="trailing" id="G87-gC-hN2"/>
+                                            <constraint firstItem="cQg-Dq-tF8" firstAttribute="centerX" secondItem="Vdt-Xa-lEO" secondAttribute="centerX" id="HMu-Uq-0PI"/>
+                                            <constraint firstAttribute="trailing" secondItem="Vdt-Xa-lEO" secondAttribute="trailing" id="If2-wg-qup"/>
+                                            <constraint firstItem="Vdt-Xa-lEO" firstAttribute="top" secondItem="BBd-FT-wsO" secondAttribute="top" id="K9c-Pc-ddt"/>
+                                            <constraint firstItem="cQg-Dq-tF8" firstAttribute="top" secondItem="Vdt-Xa-lEO" secondAttribute="bottom" constant="-134" id="V87-GG-w5Z"/>
+                                            <constraint firstItem="Vdt-Xa-lEO" firstAttribute="top" secondItem="pXo-1z-bti" secondAttribute="bottom" constant="-95" id="YAY-Ef-szi"/>
+                                            <constraint firstItem="Vdt-Xa-lEO" firstAttribute="top" secondItem="mkN-nP-9ec" secondAttribute="bottom" constant="-132" id="ZTf-7M-CTf"/>
+                                            <constraint firstItem="mkN-nP-9ec" firstAttribute="centerX" secondItem="Vdt-Xa-lEO" secondAttribute="centerX" id="jTz-mL-iSh"/>
+                                            <constraint firstItem="d6c-hm-N9K" firstAttribute="centerX" secondItem="Vdt-Xa-lEO" secondAttribute="centerX" id="nkU-Io-Xps"/>
+                                            <constraint firstAttribute="bottom" secondItem="1w8-RS-e7I" secondAttribute="bottom" id="p3R-qO-V0s"/>
+                                            <constraint firstItem="d6c-hm-N9K" firstAttribute="top" secondItem="Vdt-Xa-lEO" secondAttribute="bottom" constant="-166" id="rGK-q5-hco"/>
+                                            <constraint firstItem="Vdt-Xa-lEO" firstAttribute="leading" secondItem="BBd-FT-wsO" secondAttribute="leading" id="wz3-bB-79L"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="cityLabel" destination="pXo-1z-bti" id="lZt-T2-ran"/>
+                                            <outlet property="countryLabel" destination="mkN-nP-9ec" id="3SX-1h-iyn"/>
+                                            <outlet property="daysLabel" destination="d6c-hm-N9K" id="Nwd-XS-caD"/>
+                                            <outlet property="imageView" destination="Vdt-Xa-lEO" id="Jft-ic-tTe"/>
+                                            <outlet property="likedButton" destination="a5s-fd-Zuy" id="UYH-YT-2hh"/>
+                                            <outlet property="priceLabel" destination="cQg-Dq-tF8" id="1V3-00-7wz"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="laR-kW-evL"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="3dZ-Ln-6r6"/>
+                                </connections>
+                            </collectionView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Most Popular Destinations" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g0Y-DA-Sfg">
+                                <rect key="frame" x="42" y="28" width="290" height="62"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="290" id="Se7-cP-VIb"/>
+                                    <constraint firstAttribute="height" constant="62" id="cHk-b8-yaL"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="SnellRoundhand-Bold" family="Snell Roundhand" pointSize="25"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="dWs-AO-CMU" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="46p-CX-Yrl"/>
+                            <constraint firstItem="g0Y-DA-Sfg" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="Bug-gc-d55"/>
+                            <constraint firstAttribute="trailing" secondItem="dWs-AO-CMU" secondAttribute="trailing" id="DkO-18-f8M"/>
+                            <constraint firstItem="dWs-AO-CMU" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="F7K-rp-KKw"/>
+                            <constraint firstItem="g0Y-DA-Sfg" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="H0L-V6-3IH"/>
+                            <constraint firstAttribute="trailing" secondItem="6wx-EM-cZG" secondAttribute="trailing" id="K63-O8-v25"/>
+                            <constraint firstItem="6wx-EM-cZG" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Rgv-Bd-NI0"/>
+                            <constraint firstItem="dWs-AO-CMU" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="bzR-Uh-h8T"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="6wx-EM-cZG" secondAttribute="bottom" id="udH-lH-Zh7"/>
+                            <constraint firstItem="6wx-EM-cZG" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="wTl-TQ-F3L"/>
+                            <constraint firstItem="dWs-AO-CMU" firstAttribute="top" secondItem="g0Y-DA-Sfg" secondAttribute="bottom" constant="28" id="z6i-aL-Ljj"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="carousel_View" destination="6wx-EM-cZG" id="k0q-7Z-6fc"/>
+                        <outlet property="collectionView" destination="dWs-AO-CMU" id="msT-e0-ciJ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-53.600000000000001" y="-170.46476761619192"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="heart" width="128" height="128"/>
+    </resources>
 </document>
